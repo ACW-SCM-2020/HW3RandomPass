@@ -55,6 +55,7 @@ function generatePassword() {
         alert("Please input a valid character quantity.");}
     else {
         q1prompt = true;
+        var newpassword = Array();
     } 
     question2 = confirm("Would you like Uppercase letters in your password?");
     if (question2 = true) {
@@ -72,9 +73,16 @@ function generatePassword() {
     if (question5 = true) {
         q5confirm = true;
     }
-    if (q1prompt = true && q2confirm === true && q3confirm === true && q4confirm === true && q5confirm === true){
-        return ()
-    }
+
+
+function charchoice (){
+    while (true){
+        var choice = (Math.floor(Math.random() * Math.floor(4)) + 1);
+        if ((question2 == true && choice == 1) || (question3 == true && choice == 2) || (question4 == true && choice == 3) || (question5 == true && choice == 4)){
+          return choice; 
+        }
+      }
+}
 
 function singlechar(){
     thisCharacter = charchoice();
@@ -85,11 +93,14 @@ function singlechar(){
         return lowercase();
     case 3:
         return special();
-    case 4:
+    case 4:s
         return numerical();
         }
 }
-
+for (var i = 0; i < question1; i++) {
+    newpassword.push(singlechar());
+}
+return newpassword;
 }
 
 
