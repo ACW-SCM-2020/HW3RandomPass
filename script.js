@@ -93,7 +93,7 @@ function singlechar(){
         return lowercase();
     case 3:
         return special();
-    case 4:s
+    case 4:
         return numerical();
         }
 }
