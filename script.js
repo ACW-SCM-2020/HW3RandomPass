@@ -27,12 +27,17 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var finalpassword = generatePassword();
+  password = new String(finalpassword);
+
+  for (i = 0; i < finalpassword.length; i++){
+  console.log(password);
+  password = password.replace(",", "");
+  console.log(password);
+  }
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  for (i = 0; i < password.length; i++){
-  password = password.replace(",", "");
-  }
+
 }
 
 
@@ -46,11 +51,11 @@ function lowercase() {
 }
 
 function special() {
-    return specialArray=[(Math.floor(Math.random() * Math.floor(7)))]
+    return specialArray[(Math.floor(Math.random() * Math.floor(7)))]
 }
 
 function numerical() {
-    return numericalArray=[(Math.floor(Math.random() * Math.floor(10)))]
+    return numericalArray[(Math.floor(Math.random() * Math.floor(10)))]
 }
 
 function generatePassword() {
